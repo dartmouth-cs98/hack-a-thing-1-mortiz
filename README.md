@@ -3,6 +3,6 @@ hack-a-thing-1-mortiz created by GitHub Classroom
 
 ## Project Overview
 
-## Learned
+## Project Takeaways
 
-## Technical Considerations
+## Technical Obstacles/Considerations
