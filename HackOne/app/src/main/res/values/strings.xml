@@ -1,4 +1,7 @@
 <resources>
-    <string name="app_name">Hack One</string>
+    <string name="app_name">Text Recognizer</string>
     <string name="btn_capture">Capture</string>
+    <string name="btn_speak">Speak</string>
+    <string name="Txt_messge">New Text</string>
+    <string name="txt_reading">Searching...</string>
 </resources>

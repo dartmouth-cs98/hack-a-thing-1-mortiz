@@ -1,6 +1,7 @@
 package com.example.mike.hackone;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -10,6 +11,7 @@ import android.util.Log;
 import android.util.SparseArray;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.View;
 import android.widget.TextView;
 
 import com.google.android.gms.vision.CameraSource;
@@ -21,11 +23,16 @@ import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String CAPTURED_TEXT = "com.example.hackone.MESSAGE";
+    private String message = "Searching...";
+
     SurfaceView cameraView;
     TextView textView;
     CameraSource cameraSource;
 
     final int RequestCameraPermissionID = 1001;
+
+
 
 
     @Override
@@ -123,16 +130,28 @@ public class MainActivity extends AppCompatActivity {
                                 for (int i = 0; i < items.size(); ++i){
                                     TextBlock item = items.valueAt(i);
                                     stringBuilder.append(item.getValue());
-                                    stringBuilder.append('\n');
+                                    stringBuilder.append("\n");
                                 }
 
                                 textView.setText(stringBuilder.toString());
+                                message = stringBuilder.toString();
+
                             }
                         });
                     }
                 }
             });
         }
+
+    }
+
+    public void onClick(View view){
+
+
+        Intent intent = new Intent(this, SecondActivity.class);
+        intent.putExtra(CAPTURED_TEXT, message);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
 
     }
 }
