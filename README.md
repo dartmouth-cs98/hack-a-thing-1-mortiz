@@ -1,4 +1,4 @@
-# hack-a-thing-1-mortiz
+# Text Recognizer
 hack-a-thing-1-mortiz created by GitHub Classroom
 
 ## Project Overview
